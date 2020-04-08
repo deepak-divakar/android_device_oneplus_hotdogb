@@ -9,9 +9,6 @@ $(call inherit-product, device/oneplus/sm8150-common/common.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/hotdogb/hotdogb-vendor.mk)
 
-# Vendor properties
--include $(LOCAL_PATH)/vendor_props.mk
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -21,7 +18,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 AB_OTA_PARTITIONS += \
     odm \
     product \
-    recovery \
     vbmeta_system
 
 # Audio
@@ -44,6 +40,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     NotchBarKiller
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # tri-state key
 PRODUCT_PACKAGES += \
