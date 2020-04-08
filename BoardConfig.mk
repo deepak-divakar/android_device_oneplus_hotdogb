@@ -15,7 +15,7 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus7T
 TARGET_SCREEN_DENSITY := 420
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/sm8150-perf_defconfig
+PRODUCT_COPY_FILES += $(DEVICE_PATH)-kernel/kernel:kernel
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Partitions
